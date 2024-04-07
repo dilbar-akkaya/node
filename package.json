@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node -v && nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
