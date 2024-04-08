@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "task1": "nodemon task1_2.js",
+    "task3": "nodemon task3.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
+}
