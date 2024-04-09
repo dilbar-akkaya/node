@@ -1,0 +1,11 @@
+{
+    "testEnvironment": "node",
+    "rootDir": "./",
+    "transform": {
+        "^.+\\.(t|j)s$": "ts-jest"
+    },
+      "testPathIgnorePatterns": ["/node_modules/", "/e2e/"],
+      "collectCoverageFrom": [
+        "src/**/*.ts"
+      ]
+}
