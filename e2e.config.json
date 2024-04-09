@@ -4,7 +4,8 @@
     "transform": {
         "^.+\\.(t|j)s$": "ts-jest"
     },
-      "collectCoverageFrom": [
+    "collectCoverageFrom": [
         "src/**/*.ts"
-      ]
+      ],
+      "testRegex": "e2e.test.ts$"
 }

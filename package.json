@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "test:e2e": "jest --e2e",
+    "test": "jest --config=jest.unit.config.json",
+    "test:e2e": "jest --config=e2e.config.json",
     "test:coverage": "jest --coverage"
   },
   "devDependencies": {
