@@ -1,0 +1,7 @@
+{
+    "testEnvironment": "node",
+    "rootDir": "./src/tests",
+    "transform": {
+        "^.+\\.(t|j)s$": "ts-jest"
+    }
+}
