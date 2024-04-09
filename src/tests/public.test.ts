@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { checkIfTodayIsPublicHoliday, getListOfPublicHolidays } from '../services/public-holidays.service';
+import { checkIfTodayIsPublicHoliday, getListOfPublicHolidays, getNextPublicHolidays } from '../services/public-holidays.service';
 
 describe('Get lists of holidays by year and country', () => {
-    test('should return list of holidays', async () => {
+    test('should return  holidays in short format', async () => {
         const year = 2024;
         const country = 'FR';
         const returnedData = [
@@ -47,7 +47,7 @@ describe('Get next public holidays for country', () => {
             }
         ]
         jest.spyOn(axios, 'get').mockImplementation(() => Promise.resolve({ data: returnedData }));
-        const nextHolidayResponse = await getListOfPublicHolidays(year, country);
+        const nextHolidayResponse = await getNextPublicHolidays(country);
         expect(nextHolidayResponse).toEqual(returnedData);
     });
 });
