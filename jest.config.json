@@ -1,7 +1,11 @@
 {
     "testEnvironment": "node",
-    "rootDir": "./src/tests",
+    "rootDir": "./",
     "transform": {
         "^.+\\.(t|j)s$": "ts-jest"
-    }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "src/**/*.ts"
+      ]
 }
