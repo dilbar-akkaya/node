@@ -23,11 +23,3 @@ describe('Get next public holidays for country', () => {
         expect(Array.isArray(response)).toBeTruthy();
     });
 });
-/* describe('Check today is public holiday', () => {
-    test('should return status code 204 if today is not holidays', async () => {
-        const countryCode = 'FR';
-        const response = await request('https://date.nager.at').get(`/api/v3/IsTodayPublicHoliday/${countryCode}`)
-        expect(response.status).toBe(204);
-    });
-});
- */
