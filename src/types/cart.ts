@@ -9,6 +9,7 @@ export interface CartEntity {
   userId: string;
   isDeleted?: boolean;
   items: CartItemEntity[];
+  total?: number;
 }
 
 export interface ICartResponse {

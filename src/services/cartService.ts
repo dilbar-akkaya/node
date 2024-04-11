@@ -41,3 +41,11 @@ export const updateUserCart = (userId: string, arrCarts: CartEntity[], data: { p
     }
   }
 }
+export const deleteUserCart = (userId: string, arr: CartEntity[]) => {
+  const userCart = getUserCart(userId, arr);
+  if (userCart) {
+    userCart.items = [];
+    userCart.total = 0;
+  }
+  return true;
+}
