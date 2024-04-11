@@ -7,7 +7,17 @@ export interface CartItemEntity {
 export interface CartEntity {
   id: string;
   userId: string;
-  isDeleted: boolean;
+  isDeleted?: boolean;
   items: CartItemEntity[];
 }
 
+export interface ICartResponse {
+    data: {
+      cart: {
+        id: string,
+        items: CartItemEntity[]
+      },
+      total: 400
+    },
+    error: null
+  }

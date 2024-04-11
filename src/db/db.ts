@@ -1,3 +1,4 @@
+import { CartEntity, CartItemEntity } from "types/cart";
 import { ProductEntity } from "types/product";
 
 export const users = [{
@@ -15,7 +16,36 @@ export const products: ProductEntity[] = [
         title: 'Book',
         description: 'A book',
         price: 50
+    },
+    {
+        id: "891389f0-4312-42d6-a650-6fda0959c734",
+        title: "Book",
+        description: "Interesting book",
+        price: 200
     }
 ];
 export const orders = [];
-export const carts = [];
+export const carts: CartEntity[] = [];
+export const cartsEntities: CartItemEntity[] = [];
+/* export const carts = [
+    {
+        data: {
+          cart: {
+            id: "eb5a26af-6e4c-4f31-a9b1-3450d42ac66c",
+            items: [
+              {
+                product: {
+                  id: "891389f0-4312-42d6-a650-6fda0959c734",
+                  title: "Book",
+                  description: "Interesting book",
+                  price: 200
+                },
+                count: 2
+              }
+            ]
+          },
+          total: 400
+        },
+        error: null
+      }
+]; */
