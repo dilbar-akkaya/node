@@ -1,4 +1,4 @@
-import { ProductEntity } from "types/product";
+import { ProductEntity } from "../types/product";
 
 export const getAllProducts = (arr: ProductEntity[]) => {
   return arr;

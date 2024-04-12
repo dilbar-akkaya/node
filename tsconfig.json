@@ -3,7 +3,7 @@
     "target": "es2020",
     "allowJs": true,                        
     "module": "CommonJS",                    
-    "lib": ["es6"],                    
+    "lib": ["dom", "es6"],                    
     "outDir": "dist",                          
     "baseUrl": "src",
     "strict": true,         
@@ -11,5 +11,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "types/**/*.d.ts"], 
+  "include": ["src/**/*", "types/**/*.d.ts", "types/*.d.ts"], 
+  "typeRoots": [
+    "./node_module/@types",
+    "./src/types"
+],
 }

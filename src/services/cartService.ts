@@ -1,4 +1,4 @@
-import { products } from 'db/db';
+import { products } from '../db/db';
 import { CartEntity, CartItemEntity } from 'types/cart';
 import { v4 as uuidv4 } from 'uuid';
 

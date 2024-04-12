@@ -1,5 +1,8 @@
-import { Request, Response, NextFunction, RequestHandler } from "express";
+import { Request as ExpressRequest, Response, NextFunction, RequestHandler } from "express";
 
+interface Request extends ExpressRequest {
+  userId?: string;
+}
 export const passUserId: RequestHandler = (req: Request, res: Response, next: NextFunction) => {
     const userId = req.headers['x-user-id'] as string;
     if (!userId) {

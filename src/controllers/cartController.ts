@@ -1,6 +1,6 @@
-import { carts, cartsEntities, products } from "db/db";
+import { carts, cartsEntities, products } from "../db/db";
 import { Request, Response } from "express";
-import { deleteUserCart, getUserCart, updateUserCart } from "services/cartService";
+import { deleteUserCart, getUserCart, updateUserCart } from "../services/cartService";
 
 export const getUserCartController = (req: Request, res: Response) => {
   const userId = req.headers['x-user-id'] as string;

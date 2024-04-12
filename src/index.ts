@@ -1,7 +1,7 @@
-import { deleteUserCartController, getUserCartController, updateUserCartController } from 'controllers/cartController';
-import { getAllProductsController, getProductByIdController } from 'controllers/productController';
+import { deleteUserCartController, getUserCartController, updateUserCartController } from './controllers/cartController';
+import { getAllProductsController, getProductByIdController } from './controllers/productController';
 import express, { Request, Response} from 'express';
-import { passUserId } from 'middleware';
+import { passUserId } from './middleware';
 
 const app = express();
 const PORT = 8000;

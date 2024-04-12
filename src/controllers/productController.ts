@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getAllProducts, getProductById } from '../services/productService';
-import { products } from "db/db";
+import { products } from "../db/db";
 
 export const getAllProductsController = async (req: Request, res: Response) => {
   const productsDB = getAllProducts(products);
