@@ -1,6 +1,6 @@
-import { carts, cartsEntities, products } from "../db/db";
+import { getUserCartService, updateUserCartService } from "../services/cartService";
+import { repository } from "../repository/repository";
 import { Request, Response } from "express";
-import { deleteUserCart, getUserCart, updateUserCart } from "../services/cartService";
 
 export const getUserCartController = (req: Request, res: Response) => {
   const userId = req.headers['x-user-id'] as string;
@@ -11,7 +11,7 @@ export const getUserCartController = (req: Request, res: Response) => {
   }
   console.log('req', req)
   console.log('userId', userId)
-  const userCart = getUserCart(userId, carts);
+  const userCart = getUserCartService(userId);
   res.status(200).json(userCart);
 }
 
@@ -22,8 +22,8 @@ export const updateUserCartController = (req: Request, res: Response) => {
       error: 'Invalid user ID',
     });
   }
-  updateUserCart(userId, carts, req.body, cartsEntities)
-  const updatedCart = getUserCart(userId, carts);
+  updateUserCartService(userId, req.body)
+  const updatedCart = getUserCartService(userId);
   let total = 0;
   for (let item of updatedCart.items) {
     total += item.count * item.product.price;
@@ -44,7 +44,7 @@ export const deleteUserCartController = (req: Request, res: Response) => {
       error: 'Header is missing',
     });
   }
-  const deletedUserCart = deleteUserCart(userId, carts);
+  const deletedUserCart = repository.deleteUserCart(userId);
   if (deletedUserCart) {
     res.status(200).json({
       data: { success: true },

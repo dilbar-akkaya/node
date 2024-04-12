@@ -1,8 +1,16 @@
-import { products } from '../db/db';
-import { CartEntity, CartItemEntity } from 'types/cart';
-import { v4 as uuidv4 } from 'uuid';
+import { repository } from '../repository/repository';
 
+export const getUserCartService = (userId: string) => {
+  return repository.getUserCart(userId);
+};
 
+export const updateUserCartService = (userId: string, data: { productId: string, count: number }) => {
+  return repository.updateUserCart(userId, data);
+};
+export const deleteUserCart = (userId: string) => {
+  return repository.deleteUserCart(userId);
+};
+/* 
 export const getUserCart = (userId: string, arr: CartEntity[]) => {
   if (!userId) {
     throw new Error("Invalid user ID");
@@ -20,9 +28,9 @@ export const getUserCart = (userId: string, arr: CartEntity[]) => {
     return newCart;
   }
   return userCart;
-}
+} */
 
-export const updateUserCart = (userId: string, arrCarts: CartEntity[], data: { productId: string, count: number }, arrProducts: CartItemEntity[]) => {
+/* export const updateUserCart = (userId: string, arrCarts: CartEntity[], data: { productId: string, count: number }, arrProducts: CartItemEntity[]) => {
   const userCart = getUserCart(userId, arrCarts);
   const existIndex = arrProducts.findIndex(item => item.product.id === data.productId);
   if (existIndex !== -1) {
@@ -48,4 +56,4 @@ export const deleteUserCart = (userId: string, arr: CartEntity[]) => {
     userCart.total = 0;
   }
   return true;
-}
+} */
